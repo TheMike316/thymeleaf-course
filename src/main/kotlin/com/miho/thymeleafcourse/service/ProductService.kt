@@ -14,14 +14,14 @@ class ProductService {
 
     fun getProduct(id: Long) = productMap[id]
 
-    fun getAllProducts() = productMap.values
+    fun getAllProducts() = productMap.values.toList()
 
     private fun createProductMap(): Map<Long, Product> {
         val jt = Author()
         jt.firstName = "John"
         jt.lastName = "Thompson"
         jt.id = 1
-        jt.image = "instructor_jt.jpg"
+        jt.imageUrl = "instructor_jt.jpg"
 
         val springIntroCat = ProductCategory()
         springIntroCat.id = 1
@@ -115,7 +115,7 @@ class ProductService {
                 "\n" +
                 "You will learn what Dependency Injection is, and how Spring uses Inversion of Control to leverage Dependency Injection. Next in my course, I will walk you step by step through building your very first Spring Framework application. I'll show you hot to use the Spring Initializer and Spring Boot to jumpstart your Spring Framework project. Ideally, you can follow along and create your own Spring project. I know it can be frustrating to follow along in a course and run into errors. So don't worry, I have the complete source code examples in Git for you to checkout and use."
         springCoreAdv.price = BigDecimal("199")
-        springCoreAdv.imageUrl = "SpringCoreAdvanced.png"
+        springCoreAdv.imageUrl = "SpringCoreAdvancedThumb.png"
         springCoreAdv.productCategories.add(springCoreCat)
         springCoreAdv.productCategories.add(springBootCat)
 
@@ -131,7 +131,7 @@ class ProductService {
                 "\n" +
                 "You will learn what Dependency Injection is, and how Spring uses Inversion of Control to leverage Dependency Injection. Next in my course, I will walk you step by step through building your very first Spring Framework application. I'll show you hot to use the Spring Initializer and Spring Boot to jumpstart your Spring Framework project. Ideally, you can follow along and create your own Spring project. I know it can be frustrating to follow along in a course and run into errors. So don't worry, I have the complete source code examples in Git for you to checkout and use."
         springCoreDevOps.price = BigDecimal("199")
-        springCoreDevOps.imageUrl = "SpringCoreDevOps.png"
+        springCoreDevOps.imageUrl = "SpringCoreDevOpsThumb.png"
         springCoreDevOps.productCategories.add(springCoreCat)
         springCoreDevOps.productCategories.add(springBootCat)
 
