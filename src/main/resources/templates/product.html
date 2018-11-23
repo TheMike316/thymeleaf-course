@@ -25,7 +25,7 @@
             <h1 th:text="${product.name}">Spring Framework Guru - Course Name</h1>
         </div>
     </div>
-    <div class="row">
+    <div class="row course-listing">
         <div class="col-md-6">
 
             <div class="row">
@@ -47,12 +47,20 @@
                     </div>
                 </div>
                 <div class="col-xs-4">
-                        <div class="small course-price" th:text="${product.price > 0 ? '$'+ product.price : 'FREE'}">
+                    <div class="small course-price" th:text="${product.price > 0 ? '$'+ product.price : 'FREE'}">
                         $PRICE
                     </div>
                 </div>
             </div>
-
+            <div class="row col-xs-12">
+                <ol class="breadcrumb">
+                    <li th:each="category : ${product.productCategories}">
+                        <a href="#" th:text="${category.category}">Cat 1</a>
+                    </li>
+                    <li th:remove="all"><a href="#">Cat 2</a></li>
+                    <li th:remove="all"><a href="#">Cat 3</a></li>
+                </ol>
+            </div>
         </div>
         <div class="col-md-6">
             <div>
@@ -70,12 +78,13 @@
             </div>
         </div>
     </div>
-
     <div class="row">
-        <div class="col-md-offset-6 col-md-4">
+        <div class="col-md-4">
             <button class="btn-success" th:text="#{product.buttons.buy-now}">Buy Now!</button>
         </div>
     </div>
+
+
 </div>
 
 <div th:replace="fragments/footer :: footer"></div>
