@@ -19,6 +19,10 @@
     <!--/*@thymesVar id="checkoutCommand" type="com.miho.thymeleafcourse.command.CheckoutCommand"*/-->
     <form class="form-horizontal" th:object="${checkoutCommand}" th:action="@{/do-checkout}" method="post">
 
+        <div th:if="${#fields.hasAnyErrors()}" class="alert alert-danger">
+            <p th:text="#{checkout.hasErrors}">Error Message</p>
+        </div>
+
         <div class="form-group">
             <label class="col-sm-2 control-label">First Name:</label>
             <div class="col-sm-10">
